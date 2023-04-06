@@ -7,12 +7,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { LoginComponent } from './pages/login/login.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 
 @NgModule({
   declarations: [
     LoginFormComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterFormComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
