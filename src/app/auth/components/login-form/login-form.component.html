@@ -15,21 +15,20 @@
             class="border placeholder-gray-400 focus:outline-none
               focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
               border-gray-300 rounded-md"/>
+
+          <!-- Error Email -->
+          <div *ngIf="form.controls.email.touched && form.controls.email.invalid">
+            <p *ngIf="form.controls.email.hasError('required')"
+              class="font-medium text-red-500 text-xs mt-1 ml-1">
+                This field is mandatory
+            </p>
+            <p *ngIf="form.controls.email.hasError('email')"
+              class="font-medium text-red-500 text-xs mt-1 ml-1">
+                This field should be a email
+            </p>
+          </div>
         </div>
-        <div *ngIf="form.controls.email.touched && form.controls.email.invalid">
-          <p
-            *ngIf="form.controls.email.hasError('required')"
-            class="font-medium text-red-500 text-xs mt-1 ml-1"
-          >
-            This field is mandatory
-          </p>
-          <p
-            *ngIf="form.controls.email.hasError('email')"
-            class="font-medium text-red-500 text-xs mt-1 ml-1"
-          >
-            This field should be a email
-          </p>
-        </div>
+
 
         <!-- Password -->
         <div class="relative">
@@ -46,20 +45,17 @@
             class="border placeholder-gray-400 focus:outline-none
               focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
               border-gray-300 rounded-md"/>
-        </div>
-        <div *ngIf="form.controls.password.touched && form.controls.password.invalid">
-          <p
-            *ngIf="form.controls.password.hasError('required')"
-            class="font-medium text-red-500 text-xs mt-1 ml-1"
-          >
-            This field is mandatory
-          </p>
-          <p
-            *ngIf="form.controls.password.hasError('minlength')"
-            class="font-medium text-red-500 text-xs mt-1 ml-1"
-          >
-            This field should be greater than 6 characters
-          </p>
+          <!-- Error Password -->
+          <div *ngIf="form.controls.password.touched && form.controls.password.invalid">
+            <p *ngIf="form.controls.password.hasError('required')"
+              class="font-medium text-red-500 text-xs mt-1 ml-1">
+                This field is mandatory
+            </p>
+            <p *ngIf="form.controls.password.hasError('minlength')"
+              class="font-medium text-red-500 text-xs mt-1 ml-1">
+                This field should be greater than 6 characters
+            </p>
+          </div>
         </div>
 
         <!-- Btn login -->

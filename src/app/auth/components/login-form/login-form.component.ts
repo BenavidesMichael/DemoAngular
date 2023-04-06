@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { faPen, faEye, faEyeSlash, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from '../../services/authservice/auth.service';
 
 @Component({
   selector: 'app-login-form',
@@ -27,6 +28,7 @@ export class LoginFormComponent {
 
   constructor(
     private formBuilder: FormBuilder,
+    private authservice: AuthService,
     private router: Router
   ) { }
 
@@ -36,6 +38,7 @@ export class LoginFormComponent {
       const { email, password } = this.form.getRawValue();
       console.log('email: ', email);
       console.log('password: ', password);
+      this.authservice.login();
     } else {
       this.form.markAllAsTouched();
       this.loading = false;
